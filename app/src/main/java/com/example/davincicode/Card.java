@@ -2,7 +2,7 @@ package com.example.davincicode;
 
 class Card {
     int number;
-    double index;  // White: -2, 0, 2...22; Black: -1, 1, 3...23
+    double index;  // White: (-2), 0, 2...22; Black: (-1), 1, 3...23
     private boolean visibilityToAll = false;
     private Player belongTo;
 

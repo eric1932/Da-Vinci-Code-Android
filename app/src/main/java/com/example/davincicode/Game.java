@@ -7,11 +7,13 @@ import java.util.Random;
 public class Game {
     private ArrayList<Player> playerList;
     // [-2W, -1B, 0W, 1B, 2W, 3B...22W, 23B]
-    private Card[] allCards;
+    private Card[] allCards = new Card[26];
     private ArrayList<Card> cardPool;
 
     Game(int numOfPlayers) {
-        for (int i = -2; i < 24; i++) {
+        allCards[0] = new Hyphen(-2);
+        allCards[1] = new Hyphen(-1);
+        for (int i = 0; i < 24; i++) {
             allCards[i + 2] = new Card(i);
         }
         cardPool.addAll(Arrays.asList(allCards));
@@ -30,7 +32,7 @@ public class Game {
         // 如果有人拿到 -
         for (Player x: playerList) {
             for (Card y: x.handPool) {
-                if (y.number == -1) {
+                if (y instanceof Hyphen) {
                     x.hasHyphen++;
                 }
             }
