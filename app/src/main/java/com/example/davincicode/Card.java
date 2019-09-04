@@ -1,9 +1,10 @@
 package com.example.davincicode;
 
 class Card {
-    int number;
-    double index;  // White: (-2), 0, 2...22; Black: (-1), 1, 3...23
-    private boolean visibilityToAll = false;
+    int number;  // 用于显示
+    double index;  // 用于排序 白奇黑偶
+    // White: (-2), 0, 2...22; Black: (-1), 1, 3...23
+    private boolean visibleToAll = false;
     private Player belongTo;
 
     Card(int number, boolean isBlack) {
@@ -22,5 +23,17 @@ class Card {
 
     boolean isBlack() {
         return this.index % 2 != 0;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    void setVisibleToAll() {
+        visibleToAll = true;
+    }
+
+    boolean isVisibleToAll() {
+        return visibleToAll;
     }
 }

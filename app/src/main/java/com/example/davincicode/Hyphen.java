@@ -8,4 +8,8 @@ public final class Hyphen extends Card {
 //        this.number = -1;
         this.isBlack = (index == -1);
     }
+
+    void setIndex(double index) {
+        this.index = index;
+    }
 }
